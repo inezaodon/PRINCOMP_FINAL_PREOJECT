@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Taxi Usage and Urban Mobility - Odon Ineza</title>
+    <link rel="stylesheet" href="index.css">
+    </head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #333;">
+
+    <header style="background-color: #1f2a37; color: #ffffff; padding: 20px 5%; border-bottom: 5px solid #ffcc00;">
+        <div style="display: flex; align-items: center; max-width: 1200px; margin: 0 auto;">
+            
+            <div style="width: 150px; height: 80px; overflow: hidden; border-radius: 8px; margin-right: 30px; border: 2px solid #ffcc00; flex-shrink: 0;">
+              <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGCAaGRgYGRogIBkaHxodGxofGx8fHykgIBolGxoaITEhJSkrLi4uFyAzODMtNygtLisBCgoKDg0OGhAQGy0mHyU1MC0tKy8tLS8tLystLS0tLS0tLy0vLS0vLSstLS0tLS0tLy0tLSsuLS0tLS0vLy0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAAIHAQj/xABLEAACAQIEAwUEBAoIBAYDAAABAhEAAwQSITEFQVEGEyJhcTKBkaEjscHRFBVCUmJykrLS8AckM0OCouHxU1RjcxZEk6OzwjR00//EABoBAAIDAQEAAAAAAAAAAAAAAAABAgMEBQb/xAA0EQACAgECAggGAQQCAwAAAAAAAQIRAwQhEjEFE0FRcZGh0SJhgbHB8DIUM+HxI3IVJGL/2gAMAwEAAhEDEQA/AOU4DCFbikj8pByj2xzHpTZwUx3pIJHfNMCeS8qUROuhHpp8eU+6mfsi7FGygHxnQmNMq8wNT7hVUiaQC7Xle9GUQMi6AR+U3LlWmBtQLokn6B4+W3lrV/tZYD3/ABBlOQaCCfabXQ7VWssFzCR/ZMnOcxg6iNNqOwlGqY44ZUNnxKZyaNlP5v5w29DUqYNTwsEjUYYfuVtgsww4IClcnUgjwDyIPyryzeP4sAn/AMuP3KihKSiUOzWHVTdBUkC5yBMfRoZ0158utBOI2n7y6wUsud9SD+e4jN1hef5w601cBRu8vZY/tOYJ/u089PWrZtj8DuyBJuXp/wDVelY0Dey6/QtmQnxHkDBB+PwrbgA/q1n9QfVV/glo5XhgDnbSJnUeh/3oZ2eMYa0DyQVzek94LxOp0T/cl4fkKV7Wi3BUguCuIzvcLFhG+kvTt3po1hMUMrKSRrv5TB+HtDzFCLLeO8IH9oaL4e8uZSbakQJ8+R+r517TS/2o+B4LXf3peJLa4fdJJe4AYzCdmB6fL40U4dYecpIkfA/z9tCMdiwck+HL4fKPyT9lWeD35cA6QZmfPUem5q2VGOpN2NeCtXBoIzdCdD5eRpd7XYgC9aOVCwBOukmdiYjkKZuzuPS7m3zgaidxOh15Uq9s9XQZCRlIA0/O2nTT31lkk1TNmFtSTKGF8RDxGpOXkNVOnUQIqZ8C/dnKSZAnqYaTvyg7Dp60Mtq6exsQJUnQbfzvFSjjZlwDBAC5dxuZg6cpP+GquGnsjZxWuZKOHEXARqheDGkRmO3ITVYYablwsBCyq7bFTO/qKM4TFh3gKZz7iNwvx/k0JvZ5fwHedulc7PNvJJLbZerO1oca6qN7u36WNWAfNatt1RT8QK8x39lifPCX/jkB+oH4VDwJ5w1gnfuk/dFXb4+gxX/6t7/4zXI0Xw62K+b/ACa9Z8Wjk/kN1keFfQfVUeOX6K5+o37pqTDnwr6D6q0xv9m/6jfUa9qeOOC8Id0uBQRDQrAiQQNdfKRRXF4a17It2pkkjuk3nw8gTzEeevShHA7ZN5AATOkDpsYnSdd6um7mggKSCdCdueZhPP3VpVVbMOVycklyJcF3Ru2VuWbfdsRJyqDsVBePycwkg6QZ2FFeDcOt4ktmRba2l/s1UrNwaO2YHPlVpWM24bkBS7jGGXnMyrTOaJDBZ0KSB8+sUZw2Mbunb8IC/RlioZRLgkwPDmk+1MyTO01GMbYZZuMUVMPZH40UJLKl+0BnYsQA4nUnWDmMco8q7fFcRtOlviVru1IVrlr2s2uZxmPi1JJJ1mNDvXbzVU1Uma8UuKCYi/0mWy3dBRJ7u5oOfitVy90ZWhlcHeD91da7bj6ax+pc+u3XN+1Kg3lmfYGvICTVan8fCX9Wur4/mXcGzZBDCPdXtWOHcPzW1bvrCyNmdgRrzAEVlW2ZGtxKMHYiQft6fztTF2VUhWAMHOdYn8ldx93Sg7MjsouLdEMpAIRgZMRspg+ZNGezmCVFdc5aLh2zKR4RoYP2ka1kkdBFLtOhN4SQTkGoEflHkZoUyGN5059NKI9p7ji8Mqs4yDkW5nmPKquK+jVGZZDKWGXcDSZB9aaAdsFanDaOQRb1UEa+DmCDHuilKxxO4LZtZ/CVjKRoBHI6x5QKbcMR+DjMsgJoSkx4RzExSjbtgroQdNwfLSooBo7KXRcFx35uPZzaEIo5ajbepLvE7Qs3rObxi5cIHUG4zDX0Na9jiUV4iS06kgeyOcH6qB8YQm9d/XaRuPaNFbgN3BYa25yZwXbbKY211P1UE4AIw1ofoCivZH+wIL5TmaB4dfcR06UK4Cf6va8kA+Vc3pH+C8Ts9Df3JeH5CFeivKyuMejF65cIuXP+4f5+dTW8QRHXb7qFccvlXPjyyzdNfZ60OPEiBpdEj0+6vW6eVYo+B4HWYbzzd9o2sc4huY18vP41Lhb+a2Qx8SmDpz6z/PKlKxxTRZxAG35I/hohw/EuyqxuHMQM8Acp3GXXQVOUu0phhfI6F2RKZ2YsQVtknMCRAgHQctTr6GgnaO0t4S7EEp4gPyYaduWgA91D0svLFXYEbGVGkxrA6das4OxKupafDHWNDNUk446ZratZVtZBmUKBr0Iyz6xr7qBMkO0/8RZ+DUedGAtwT7ABM9DQK43iafz0+o1OJNhfsxiHU+FtgTBEg6geu3SjF7Fgg5hBPOdNuv3xQHgrQ3+Fv3hRK7d091cjW408rddx6Pox/wDCnfeGeAt/VrP/AG1+qrt25FrEeeHvf/E1BuAXv6tZ/wC2v1VbuMGKqYIMgyBEZGnciubp4Na1P/6Zr1EP/Rf/AFX2HrDY+0ESbiDwjdh0qPH8Rtd1ci7bnI2zrvlMVz3FcMw9p2ItWggT/hqYPjGYMZIIgRHMUGx5B9i2i8piDEATI36CZjpXr43LkeKk1HmCOE4QnNB9kQPQkA1cxyogKADUjxayMu5001PUc9Kr8IY94VBIlWHrpP8Ap76vcUtyiXFtEhfC9xWMMx1UEcj7QmIMdQa2bcJzW31hEWBQpcXRVjMAQc5YZASAdIDcgJYyatcGtT3tttCLLk8pECCDGsz7wOdUsRxAZn+iVFcoGVSQAV3IEgSdTGwzcqc+F37jWsPbWzM2dLjEDN4HOhGY9SAR1qK52E64aYm4vE/13DXGMD6BiTyAcT9Rrrh7YYKJ/CFjqQ0c/LyPwrjXap3GMbOSrDIDDE5YUbHffX31HjMZlVVVs/jZmYgk+LLJJOpJg1Tk3kzbgVY4r5I6H2n4rYxd+ytm+phLmZlXNl1QjwkiZignbXhlnubbWgSyCHLAjWBy5Scx33AHOh/COIWzbRGfxagDn7RYfXRm3w5bbXUabguWu8y7Ak2+8APkCI91UT2lZqhunE94HjEWwgNi2xg6tEnU1lVOH4pRaQHLOUbqZ9/hrKrd2SSjQIxfYfEdQ2X2QDoP24+VWOFYC9hwwe2xlpmDtlA3AiZHlXR1NbQOlSasXEcY7RjvL2ZS6+AAwJykMx1ynTep8O17EA2FY3GNpgASJZgAR7W23WKcO0nFu5xBQ2bVxSobxDWTI0Pu6VRs8ZwpMtYuWzzNt5+RgfKrVhlSZB6iKtdoQSy62GUwIWGUggghROs/KK5I6/SiDGx92UH6q63icKLdvK7+M2wZDMASV6EwfSudDBr7Uf3SmfMED6x8KpVJstSbSvmOvYy2At3OzAC6eZ08K6enkdKDcWuuLt0jKyhmidzBOxGm0cudMPY4MFu5QJ707kj8hegNVsfYU28QzLLl70EMdMqztHiEk9PnUUyQR7H3CbDeARmYESORiddDtNBezoixbH6NGuyOUWDJI+kfUT+dz5fGlThWMcWlAgR69aw66DlBJd52ehV/yy8PyMle0GGPueVejiD+VcnqJHo+FgLtNhs77xDt88tDbGCAa2P01/eFX+0GJAKlhMs23ov+3uqjgHBuW9I+kWP2hXqNNXVJV2HhdZfXy8WVb+EABMUx2bdvurQLEShk6aEAQBqOvM0LubGrjA9zaABJJiI30XarckE0iiM2nseHGOjXPFIGmp5d4FjTUf7UewGKKZmNuQQoMEbxsOfPmaWbqsbmIBjST8Lw+fL3Vdwl9u5ugvBmw3teSyd/n51VJDTGnO7SFDC3lAfcD8ogGNwQD5aEGgPEMOwY5hEsjDbUENB8ppownF2t3QLbkd6ChYQVks0BvWRHlO9EuN8AvYgIy2FAURKiCwklS2kEieZmiMWRlNLmxK4Z4WP+P94VfvXND7/qrW/wm4jGQdMwPQEwdxpVd7TEgdZ15DwxrHnWbNh4pWdTSauOOHD+7hXgd3+r2v1BRPAuDdWZgSTHTKftIpfwWEdbdtR4hAEgE8yJ228J1q1bwrAtnBESNQRO/wB1Y4aKSzdZ2XZ0cvSWGWl6q96rt7gv2hWS1uT4kgg+ZuD5ExSKblxmTO5gtoBMSDG3u501Y/FhrrBgZtKoLloknMdQBHtEih3F7KM1gWUOVAM7a6sYJO3WdZ5/HrwdbHmppPfuAPB7v0yzrG55nSOtGcaQdNcgnTzgkE6j86NpigfArGZnInMlouAOZDIPtNbXeNuQVNoA6+6fKOo2rVGaSaMOTC5SjJdhulsvosRmkk8gJ8z1p5s8ZKWMOvJFCwNP7pgffDjXkOtIOD4y1lye7tPyi4isNDOmkgzzHl0qX8eXmZclsTlyhdwZ6A7aAAa8j1pxnFPcrzYMklUWZ2kzHEtmMk5deugqFqt9orTi5aNwAO9sMdCN7jjY89PnVUqd40qubTk2jVgUo44qXNIscGsZ79tNizZR6kED3SRXSuPQuL2MdxsP+0wgDlXN+DMRiLJBiLi/vAV0THXWfGEt+ZH+RqzZTVjFDh91u7XxHSR+XsCQNmA5dKyh9grGs7nl5mvakyKTOrqK2rRakFIBC7eCMSp62l/fel8xypo7eL9NbP6EfBj99LWWuhi/gjBl/mx74t3rLbCCVewkmJOoIMagfOk+/wBmXKhVZlhQplBrBDfkux1IPxpi4txZbS4XMjtmw6QVHy9dait9rLI0Y3F9R9xrlztSZ04P4UecAtdyHFyfFczDJnWBlA1LBBy2qlxO0z27ioGJNx2ADA5gwAEgE689elGrPaTDt/ec+aH648x8asrxPDP/AHlo+pA+6oWSBfZ+89myAy5c11x45WBGYH5Ae+kuy8IO6+kX11+ddJa3YI8Hd/4Sv2Vyu5ZKYq6isYDtz356/Gk4Kapl+n1E8EuKDLb41wJNs/z7qy3xAmIVSSQoGYTJMDTff6614uWWzIMHTWhnDmJuWyTP0ifvrRDSY5Jto0z6X1K2UvREnF7ue0jfpHl13+ofCswlk5rDQY7xNeWrafIGqbg5MvSCKOWr6lcOsgZCpOm5zSPfqfjWyEOGNI5WTI5y4nzNrXDM6ue8QZVLkEPIUCSdEI+fOryYdTbwYzruJ0f88beGdusU/wBrgNgZYtoBclH0PiUoSQddiQKC9qOCBL2GW0oVARtoq+KOZ3MbDfkKg8liS3F9eAuWuXA2ZXzDRSSD3kkRoeTcq0/F9qYAOqxAUax3cflUR7+0C6hi7pmBUFlGr66xJ1bbwnfWhF3i93xKngUKNE0me73b2judyahzJINJw9UNnMHWXBYOyiQGAEJq5PIaczrrT5gOKDwYe0ZKICywVIEAAgzG5GkTryrmXD7ubuAVJfOhJ3GUsk6fGeVM+IuMuKGjlBBBw0Z/QlTLKdo0iR0FWK6KnTY69n1e494C5li4cxABJYKgOp08tRy+G1q2rpeDL3hV2WbgSeYhTEcvWvey1wA4ogkfTc+uVZgHqZoZ2y4SosMjsStzEhpAgrJPmZid9KvnxKapbb35GPHwuDTe+1eZmE7K2mtJDuMwUnVTOufptJ+FKdvh4W6bKzrcZMzONQMwkmIXQExRHhuPxCIFF92yyJMHrG4PID4ULx6ubhhczuw1mMzMInQgAyRrAGlUzp/xRqxcSfxMg4liWsX+7IXNeNsBgwOZZgHnsSYiNhpyrREe+3dLccMTEZyq6byBy8taLN2dRrhvHFWzcKm53OUExPhE5piTmmKlz20um8WtKA+fKp1AjUIOcjlrWepJm3FwU7ViRfwyo6i0GRmyqSHaSD7fukA+Uc6HPMmSSep3+NNPB+JWFdXIzXJK21ldMxKyw5ELr/Ipb41h7lr6QhSrs2oI0IYggiZGtXY263I6lRUrVb77F7/xDisnd974MuWAqDwxEaLO1ChpsYqmca3QVr+HNroPnr86sSRnGbjaWLd6znDFWw6MY18ZnXU7SNq2xF22E7ssRlncep3AJ5gQdo9aFdosYHvqcmUKqDKJj2Q5idh4o91HeKYVSEmAzBmbr10G28j31F9hKII4esXrWs/SLt0zCTB8q6LfH9YtmZm3v1EPFc7wFh/wiyujNmXwqNgPEdZ3iZ05V0AqBdtsJgqdztGf3RrNVzROL3QiWhp7z9dZUOeJ9T9de1JoSex1tTW6mq9tqlDVEiQcQ4RZvkG4slRAIZhHwNULvZDDkaG4vo33g0ZU1uToampyXJkXCL5o55/SPYa2uHtW3OVVAIJ3CHQmNDqR8aU8OuKUwH8W7BmUgKdJGpE06f0nKZsGNIeTz3Tb50iO9gkM3eEr0XSZMhs2vSoPdlkdkFmu3izZXUvBIGVJjxTlAEz4jEdB0qDCs7F86ubcKVKqu4XckiSNTrPWqX4RZY5VQydV25byPSrK42wswjzqCVdhP2R/OtCQ2yyTGgV5GsQdBpJLDTaTE8qFcHUm7uSddzRG3iS6xbzq3KXA8jrI+FWMBwq4GtkJMKZIK7n30nshx5mnG0LWcoGuny/2oXhOD4lHtubZhWVtYEgMDzP8zTLjMBdgAW2OpkAdVNNmKfLgO7bG9++ZYWLg8MDwjMDLKxBmRIB0ojJpbDkk3uc2s9m8WwEWHIOxEa+mtS2uz+KEfRHwtmOo5QddeldAw2NuiyhGLZSoVe6lvCFMHYFTBgzIMADkKu4vjFsWrg7wFmU2wv0n0k7vqN4g6naNKFlk+aE8cVydg/C8RxbKpdQhXMVyqxEgQNc5B0MkRpVHji3rr2bptiEacxYeKGMe05g+UiiCcUV0taE5LVwG2skBwZkSBuDy/NoL2u4+rYfDWAzplIuXF1UkN4grRESHIiT7IqNvuClezLnZ/s5ba5ee/eFoE+ESkmSGnc7ZdvOii9leGyScYTIAPjt8sv6P6IrnRxttrq3O7V1RYyNqPaJEnKZgQNddN6kwuNVVtDuLTBSRqD4iAZiFnZxvO3vFbll5qHqvmWqGLtmdO4X2f4et1oxBhVUIe9U5ubEjLyhR8aM4XsngQveLduwJOfOYG8kELArjyYd7tpFFhAtogs8ETAjWVEEzTj2d4jds8NuqykgAshYnUB00nRh4i/5MQBVic2rkqKpKN1F2OaX7Vu462it1WZbk5xOYKBGg0Gg5VJ2hwd7F4RDaSXzAlSwBESDuQOlJljtUwQ97hlyjQ/SBj8CkfOrGB7bqgAQ3UUaRltkacva0G/LnVyzTM708OdAzinAsVYyd4WRtT4TIiRM5ZEajfrXvC7rretO4LeIAtMSAPESNtB9XnRdu2uHvsFuXEeDBVkYT5GBG4B9QKp3MEqXQxFtJvqQuugzLlAiZMSuXbbTnUYy3XF3k5R+Fpdxr2j7N3EnEWzbyuZEzPOQeihZ1mdYoFieHu95wXEFQ2QEAaFZ8JPMSZ610PjCsME40JJg8pzSuYEGSdQNYpVxFuyL7Xrjy3cggEwFACppEFpKk7iPOq89xexZh+KO4i8Nwlz8JUDKDmJElCYBnQanYdOlW+LcLutcZroAgkDM9tNJMaEj6qKYdDfvJbtXgFzFmCDIAN/EoIzExE67617iez4Y37oukIlxg0WiYJbaQ2sSPjV/FvRSltyFvE8MCZc0eISMrKw0MbqY3FEsRhbdyyqsotvbtQgIAzHvobMTEc9+bHpR3GWxfw1uwlxQLYUsWUgkhSvOANJ0LDar3Ez+EYcpnIMBrjFVCsRkCkEEjUg6A7MDrFVwyNq5KiyUEnSdil2t4cLd20wI+ktox8Q3ChdJPlyn50wcYwAuWAzJMEidJGsiBIkaGTIjTeteNcN79rbZT4EVAxEjRVmANyNfa08jpV7iNi1dQ23LggShYBdsx57Sojbypua2YcD3QvYfhZsFbylCyuStsSxyrmkllmDpsTt76LNeui4txZdYC7qCCULLoRBjNzOsa1Z4wlu3Ya4DmugGCdRkYhTmiIbUkDXStOHIHt5XldVHhjR0ACltDpoZ+uoRlxOVknFxSa/f3cmtdk8IwDNduBjqwBWAeceHrWVewtl8o16x6SY3jlWUcTCkJNvi+I5X7n7bfxVt+O8Tt37/E/fQTEYbJi7RbSd/mKLYqzbBBzSN4G+xrVaKKZYTj2KG19v599bN2jxY/vz+yD9dA8diSilwsgHaeX+9WFUsivl0YA/EU/hF8XMm43xm9dVO8fOQSBIXnG5EQNNzQlr920AO6zKfFKklTJPMCOtHcDw4PbZrk5RlkBcxKEw5AGshdRHQ09W+Nzbe3h1vK4WbY7sxoPZESJ0EA8xWadcRohaijjGBaboKqVPr/AKVtcx2UmARqdA/PbaPKui8WwWIvIGxFr6VQCjZWHhYajxkeIEA5ZkZToM1DT2KJw7RdsK/XMQGBIIBMH8pZ6fXTsK7xKwj947GCDlPOZ1B6Uc7N4kLdQkFUDqXAJ1UPrpz0nTzra52WyXcgcgqvjHtZREs0qNgBMRyOulbcJsrnbuyWEqRMTBJIkaa+4VFyTRLga2Y38QxCvdYWbVyMqnKFIiRzE6UF4xccNbUh7Z5g6SDEbHXnRjB8Pz3bjXLNyABlKAgAidQAdSQNtYJrW/hsQ4HdYfJEx31i07E7gliHI9J91ZZanDBpOS80WxwzfJegnJfxBEh9Nea8jHPXcjy1o5hsaM9s3lHgYkjMIyqWCsymdJAIOmp8qJvw/G6/R2pjf8Fw/wDBV3hvBTezjFWlMbFbYtGCNptqAROpzTyqEtXhnFxUk77mr+5NaacXdcvk/YF8Vsveu23tkKEJZwTEIoBJEaEwG9Zpa7XgNfJJIAZFiTHsQff4d/Oup4Lg2GtgAhpAKZluDNlMQJgGJAk/dS5xbh2Exbm0ourej6N2aVLhSQhDa66gDwyToZNWaecYxUF2eHuV5YuUuJ9viIWIRFNzu84yKNVY+/6hV/DcWex41UO8HL3gDanuwdOZjNQ/EKczqSJyhDObSJBA0617es5oOcAg6b+Xl5VubMtF3FdrsU4X2CTMLBAG+wBAFN2ExbtgzbuAFmw964csxAuWgoEknct8aS7NpTcWLksfAoKNu0AajYzETT0z5jccW1SyuDdUAObRLlsudND4mMnfaoPkJJJ8igq2zauDQ6g5iQZmGG3PKZjfX1qtwvh3en6NM5gyUDQFH2TUPBOD3RbUWllWIYNcdVJkQIBHSKcOAWL+EUjJaJY+KW9wURC7SdBux9azPPjTriRr6uVW0KeEwiredchDkw0qSN5kEtAMHkPjR/jWGFzvEIk6sHB011gyJzCCCB5VLxzsnexBDotuSADL2yYjoSDoT7x02q7+DXLqNZa2EYiMouWp5EkyYOwoyZoqrf7+91ihibRStdnC95WtusMhzEsScuRApKhdBIIjn8h52l4QQQFHeug8QEkhQCw35Gd/vopY4TdwxZheuEHdnZGgawoLOVUSemselS4fhV2+yXHZXycybaq4lsoMOdQCBIHXyhRzxb5+5Lq+HsEzh+HRcXaWQywNRPiYqw30A1g78/Sjhwt7LeFu0Stwlu7IMksV+Bhc3r66l8RwAFZuxYQCALd23lEjKdCp1nL69KzhnY7DKVuKc4I0/s8pJBhpRASRPI1bxuX8fwVOKhzf3E3iOAcWSxLhlOUWwHLAmcoMTpOcwNBI66a20vpZS13BYrr3mgIAYySh1icvWRTLxLhNl75V8w7ogie7huYf2BBksJEbb1Jj7ygKlskK5g/SRI1DSTMctaTlcdySfxWuZe4Pxw3muWxbFvuoBNyQG0k5SBBGlCsLxW1i7n0tlwBmG+UiIAykjmfFqOdXBYuWJVAzd4TqSWieYiAh56iNqitYBLGUq/ibQljsY1kssa+If671Nz/ewt+DvCS4fChcpwzsvRnBj/2/KljBIL+Nv2xNtECugQDcE6H2Qd59xq3j7lhBBOUDQssELyzaCSB6HrSnhMZeF4vaP90TmIkuTBA0PtAcx9tQwLLGTU5X9KHklCUbiq+tjlhrmFCwyG4ZPj7m40iTGoJB0ge6spebBiTFpCJME3CCdekVlXPLFbWvMh1N77+QI4jiwvieQB4RoTrVPDXbd4nIxzDcEECNpn10obxbjFti9tVOUvOedjMmBHs+/WOVWOB2yGfMGVWtwGgwfGh0PPT6608TTKOFNBTGYK29plDannExqNI91TYO4bdtbczAAmPsrTh9oNn1OgkedLlrH31cfSnRoO3WDypua4miMYNxTGb8YPYQlDBMA6E7AwNCK9wvaG5lJLBm/JHdLE76ksem3nvpRfA8IS8TaDlGGZsw1JAOWOnOiGG7HKjhjczGdAbYafcSZ+HnXLza3S9Zwy/l3U/Y2w0udQtcvFFHs/x+813MwTKqM7kIoJCqSo0G2bKPf8dezfaVrsjE3HcXJjqpaMoX9XTTnm61Pi8Rg7Jv2hdAvZCrNlyogEErCiZmASAdo5VHiO9RFweGS2bioM7IAvdrABm42pdpknTfbWowkozqGOrqtq2XN+qQ5JuFyly+d/QocQxyYe46WALzzqzqSBoQQdZZgGKkzHLXlSHafFKYW4qDolu2B7vDWvEVS3bFm3qYz3Xgy51hROyjkI1mTqKEWVOpPtRoORM6e7n6DzrQsePMuKcb8V+Owpc5wdJ19fz2hu12nxTf+Yfpsu8x+bR/stjb1+7kfGXNBOUKNfUxp7vlzVeGYTM1tCwUEwXOwn8o/Emum9lr0G4CuYWwEDgyH0BzDTYiPSaUtNjTSjii127Lb0E80qdza8wxZSBEn/ESZqRlYbP7sq/dNZdxgMELBHWtu8zgdQOlW/0uF88cfJGd5snZN+bPbuPZe7EWzLR7AGpBA+ZFc8w3F+IYlWV3S3d7xsgIQhwuhUIddCCQ0awd5WnfiuluRupDfDX7KRu0XepjLiWbyWhmzgPou4ec3q20b+tReKKnwxW1beKf5suhlk4W32/cocW7P3bzKLgS3iHENBhHY67xKsRJGkGI0MFtLf8AR9itJy6fp6fuT86s9oMeuoF4OGaQFuGEkSQOYIaADA2Gs15iO2eNW2jqQ6gZbhCTldYkmNlZSrAnqRyq2E3S7AlH6l7hnYq/bEm4qGdCBO8c9Dy+Vb8S4dirV02rnfOuQNBBy3BPiQ7EAkCZERPSgI/pHvnc2iPNKduGcVv3kS6TZZ2QEkwI09mM/L3b1VrNVkw4tuHu3aXqLT6WGSdu/pbFfC9nb97FZns3TbLDMxCgkRJEBjA5CDoDXRMbxIYdGuXUdUUeJtNASANJk6kcqRsZxTiyu0LZy5jlnLqJ01L6mKI8O7Q8UZkGJ7gWGMMzKCMsHQHNEmI1rLi1k1Dim4fSV/Tx8zTk0sXKkpfVFvtJ2pRcOrYdgWujwsOS7Ftec6Dzk8qC9gcGrO99zDKRHmTMn+evqCz38BhralnS0oAJ9lFETmMADbUnTqTUeA7S8LTnY9VGvzX7ajpuknmm6xvxp/TsDLolCH8l6e4aXitkaPcVSP0lHxk1YTG23HgdW13BU/VQ9u1XDH/vba+qofrWjPC72DuANaCODswQa+mUD41tlq+F1KNLvMy0ia2kUuK4Vbllg+qkbjeNjB6xsesUl9nePNhrvcXDbLs2TIdG7wNGZdICOIJM6GT6v3GeKYe34IBbaCI9x0n3eVIWIx4V5shFe6xl1VZJBg+LfQ8htWPPrYdZwJNuv39Rs0+jlwcV7FriPHe7vd9BzaKy2lDyucwonUzDEncRVxsTbvkvcsXWUiVUSYDjxCPftyg0r8Kt4h8ctwWi9lGZS4YqNFYHY794zgmNo21rbiuHx6u4tWkZM3gyXyPDJIBGaJExtr7qpekzcEZRdvn3fPb7dpY9Ri4pReyHE4iyoH0eIGm2S4fsNCePY+2FzBbilfEGZRoQJA1G/LWY16UpueKkD+pvp+Uj25P+IAk1Vx1viTju3wlxZETcuA9fQc9fSrpYM7aSuu25FcMmFbur7NgxxHtSjYco9xWuEQZtqs67TzgeGRuaJcJ4NasAZBMbFjmI0GzdNOVU8F2cw6ohuWEa4ACx1ILxqddN/Kj9rDSMx8KfnHQeg6nyFbcOFYr35mXNmeStiAg9T7v969oqqKAAmGuXF5OXIzecAEfOsq2yqmfPd20Cu0GJU9QN/Wr3Zt/EREnIR8wR9XyojcQXcIL0QQduQykCB5ZdPdQ3s5ixacghTmIGs9fJh18/Q03La6LErY027YsK10ySqmABObMuVR+0aUsRdty8LcnMd3WJk8skxPKffTtxLDfQJekgG4UK+moNJVvh7XHchgoDmWbQA5tp5n0pKUci4/FeQJOHw/u498J4wbGLQBc73JRTm0GZ9M2hMaHbpTrfxbOjnvAjkxKZicsHTWCDMHQ6RXOOG8PD4lG7xAFgnKQ5EZjOVCd5iul2DbtqIDKCOaOM3nqNa4PSGaUMyyYU265pX/jyOnpsUHj4Mm3yuhbTszb75b3j7wGWYN7RIglp89SNjW//AIOtlszNcYyTJYEydT+SKJcZ7R4fDZe8b2piI5GDMkQZ5b0Jb+kDC8mPwb7ENYYPpHKrgnX73mqb0kX8VGx7DYac2W5m3nvDPyirQ7KWYjK58y7T8Zmqqdv8N1Ye65//ACq3Y7b4I+1cYfL95RVjxdK9t+a/DK+t0XcvI1/8H4fmrftn76uYHsXgtZzI3UF59xB0NXOG9osDeYJbuksdhKE/5TR61jLQ0S7bU8yILfXp7qqWXXYclTk/C37r7hL+mnH4Yry/2VLPZe2hDd/dUDlncA+4mD8KL4ThoUeG++vMOv3UOe5b3N5D8Z+qtG4/ZSFtMM5/KIMn0kQPnWrH0jqU25xfCvm2/wA+tL5meWmxSdRq/IucS4WCpD3mgzqwX4gCCTSF2m7OnE4jO1zLZ0AhVzAxBJ0mNBpmP20cx3FQNXdVkwC7ASegk6mql2/IOpH2VRPpTUSmpx2W67+72NePo7FGLTB/DezfD8OZa69xm8AlbcEzqoBzCZHSdKKpxLDpKWcPoxAJljyMEwQFA1GgHSl7hCy9xCASr5sxG7EuC36xAG3WisJbBY6AeJuWgkn7alm1eZvhcmx49NiiroWeP9grd673tpxaV1ll0jNJBIkjy+dAcZxh8PdGDVgMmVO9zKARAhjmRoEEddqd+zPGGxas1xVQqxQLBhVBJE7kt4tetF7mASfZtnzA/wBK72GHWYlHMra+5yMmR48jeN0mcvfthdsXCM1u9AgMYZeROX6Ndfuor2S7TG9iHLiBlzZUgCTCSAV03Hxp7ThSNtbBPko+wUu9vP6vhhctC2GVxmGhlSGXXKZEMVOsagVPJp4vG4QVd3yZHHqH1ilPfv8AAZeLcXXFKFvF4CkaZPygAfyZnQcxSe3ZHDlsqfhDwJMZAB03O+lKXDuKi9na89q0FjZbhLEzsFuLO3zqrY7U3bZJSFJ3yteE7x/eedYsGjz453Kba7f92as2fDKNQVd37Q+YXsphwSrm+hAB8WU5gSdiD5Gm7gePt4VVW0bnhXL+RtpO6k6kda4rd7UXH9sBvV7+nwujSp8J2hWZZQDqT/aEA/kxmvbdRFLPo9ROdxm0uxbe48OfBGNSVvt/aOtce4x3sklvCe81y7gGDooMAE6Uo8DxqWcGLl05crOQI11uE6eulKOO7UX2UocmVhEgEEjmNWMVfxPBbuLt2WtKqjKSXZz9IdI8IkjKQVmOVW6fR5En10rdr58r9xZ9TjTSxLZL7/6Oi9lMM74RGys3tEsJjV2Jiav/AEe3iHXwj76E8BwbpYto8ZlWDBkTJOmnnV8rHP6q6BzHuz25l5T74++tYkgAEk7aVPhsKzmSwVRux2GnzMchrVq3cCglCUQgjvCPG3XIOQ5TOnM8qASsrm13cgqXucrY5dS55ADlv1ip8zMwkd5cgAARkt+g9kx1ML61lnCXGU92sJ6gFvWYLe7ToKr4jMPoyAgnVeZ6Fjz9PlSJcjL2TMc1ws3MhZBPkSwJHurKgisooVsQreBFvhbuebOfcSFHzJ+FAcL2cvhgZtjnJY6T7t6l4n2ja9h7dkjwrEheYHl8ffUy9oP0CPWB9bVJE2wva4fdNtUuX8wUkgQSBJ5a1Tvdn3LZhiCsCBkWIHOIM68+tSWOJs2yN+wfrmPnRjBOp/tTcHkqKPmWNF0qE93bM7KcAuJ3rI5dmIBLGG0B+/5UxcU4M1y3At3RcysJN1SJYAEkE+XsiBQjEOiw1tmy7EERr5yzTPlG21b28W3U/L7q4Wq1ephlkotV4f5Oxp9HiyY4yd2DO1vAbzJbAtv4SfaOcxy1WepHuGlLP4gxP/DPvB+6uhrj7kaP7qWuy2NxJN8I7SHLGSNdT+cfLlVmi1WpnFxXDa777WQ1emxQak737q7ACODYkady3wb7qsJwS/Gtlp8lb7q6AHxJX/8AIhtDlhDp0kfeNqB9mOI3zexJNwnxD2iSPacaCQBtWjLqdTjxuclHbub7/BGfDhw5JqEeLfvoj7H8EurdLvabQQNCDro28cpPurqOBvsixkv9BGXbpM6fOlleLXBuV/ZP8VYeKXCfaA9Af4q5P/lNQpuSjHfx7Pqb30bFpRt7BOxh7ivdd1vMHgnMViQ8gL4uSSNevLagvGrTO65QVCgAZiu4JOoWdpHPlU9zHXG3b5f615btz7Tfz8Kjk6TzTVSUfJ+5Zh0MMT4rd/vyETtjcW7eZW/uxlt6kQ0SSB1zGD5KKa+D4zNYtO27KJ/n3Ui8RtG/395RqlzNvsrNl9+hH18jT1wJLa4a0bjBPANyNjqN/Ij41t1umfUY4RW69t/UzabPeWcm+ZKtwBmKKZYgk+gjaqfapj+DEKWD3CqAFebHXZjOkjbnUvGOPYa3bOQmQYzzCg9D1ny6UiXeOm9iLZ/IRgfUyNfcNvfUNJociyKUkq+fyHn1OPgaT3Gz+jqO5YsrEZuUDXTmQdgOnSm/8KA9lFHmRmPz0+AFAeyeGU2Ja9bQm45IYPzbXZSPnRdsEvLEWf8A3P4K7iVHHk+Jm93EM2jMxHTl8Nqp4jBW39q2reoFT/i4b/hFn4v/AAVsOHj/AJmz8X/hpkQba4Bh3MG1ZXzddPiFNW27F4ZT4zhAPKGPwyirf4vHK/Zj9Zv4K8XhY/49n9pv4aBg7E9nMCPYRHPUrHy7v7agTgFj/gW/2B91HF4aB/f2f22/hqVeH/8AXs/tn7qAsD2uFWl2tov+EVYSyBt9VEDgP+tZ/bP8NaYrAOihyylD+UrTPkBpP860CKqiTABJOwA1PpV2zhVU/SeN5gWlMmf0o29Br6VXw+ZlOWEtjRrjb+nUn9FBNaXcRlBW2CARDMfaYe/YeQ95NAyxeuQZuZWcCAqj6NPKBv6bdZrTD2muuMzqOrPED7PdtQ7voOuvXz+FXBxTBhRNklh/1GigA5Zy20NyymfTxX7jZddvDOvw+M0q38TJJOpPOteJcba7AkBRsqwAKEvio2pAEziB1NZQs4wedeUUM0wP9HFtPE7gfMfEkD5UQXhHDbXtX9f0WT/6qaJ3eCYO34rpBPW7cOvuJFQNx/BWf7JFJ/6dsD5tFOwKy2cG39lbxd39UafEr9lbfiW4/sYZrfncuj5gKDVm32jxN4fQYUkbBmJj4+EfOt79riLDV7NvrlBJ/db6+VAAjjvCmw2Ge8758kHIg88syY2zdK5zd4jhWJOW+pMzlYRrvoTXSeKYFCjLiMTeuSCCBtr5a/ZXK8ZwK4knTJOjNCyOWhOnpNQ6mEpcT5lqzSjHhXIu4C7adu7ttiyzaAAqT10g+VT97bssyHE4m0wIzAqQZG0x6zrQvgnEmwtw3FWXjKD0nc7b8veaK3u0uNuajMPM/wAih4e5v09h9c+1L19yynHABA4jdGs62yddPuqumKsDUY+6CfaKIwzGSdfiaG4i/i39pn+NUWwV0nVST50v6e1Tk/T2BZ63UV6+4yXcdZbLGPxIgRMPrvruNfuq1huIYbMrHG4g5Y0JZQYEagnWY16zSi3DrgElYHUkCq4t+/0qD0cWq4n6exNauV3S9fc6eO1eF53fkZ+VVOK9rrWRksy1wiA52Wee+8eVIFrCXGMLbc+imiFjgmKnSy591Ux6MwRd7v6lsukM0lQx8DunublsDS4UBPQKZPuOnwoSvaHu3IyBspyjMJ0Gmx0o92a4HjCcvcOitoWaAAOZEnpT9wrsFYtmQgB3nc/E61ttJmI5z+Ocbi7LWBYlHWPCoAHMdBuJqLhHY3Hh1Pcbc86/fXYHbCYfRnBPRRmPy0B9SKr3O04mLNkDzfUz5Kp+2jiYtirwvsjf7tQ1xFOpIgnViWOvqd6nxXBBa9vEWwekEn4Dl61bt4THX/aY218zk/yrr8aJYLsraWDcJc9Nh8tfnQIU7dos0LLdIGp91GsL2YvMJYKn6x1+AFNuHsoghEVfQRPrWYi8EEu4UfztzNAhbPZa5+fb/wA33Vr/AOGLgGty2ANzJ+6pOI9pz7NpY/Tb7F+00AxXELj+25PkdvhsKBl2/wAPyxF6y0/m3Bp6zFa2sC5bKpVj0V1McuR2rfCcLJXvLx7u35+03oP59DV3CIWBK/1fDjdtQzj1P8686Ao2wWFRGy6XruugjIn6x5+nymqHG8SzXQHZGjfJmga7THrtMTWmK4joVsgWrfPKTmb1MztQot01HX+eVIdBqxxgKuV7SXACcpIHhBjQTbHMVh4zZ/5ZPgn8NAneBUJzHYx6/wC1AB5+L2NZwqfBf4agPFcNzwq/BfuoBdZh/IrUkn+RQAfPFcH/AMqPgKgucUwX/KfVQUg1GymmIM/jPBf8p9X31lAsprKADFjg3DgZbFBz5ugn10n50WsXeHWgMpsac/CzfHVq5/eLuZYSfRRHuGlai3+j9VOgOgX+2OGUeEO/6qwP8xB+VD27VXLulu1aTzuXUHyJWlHu/wBH5VKqDmvwFKgD5wF28fpMdYtg8kuW5Hplg/5q2s9jcGTLYjvD/wB1df8AMT86XmAHI/A14qg8m+Boodj3hOzWEX2Ut6c5B+ZM/OtcR+L7ftNbJ6KM37s0j9yv5rf5q3W2OjfOigGK/wAXwQ9jD5j+kAo+QJqv3N+9/ZYYKDzS0fmzA/KKEC15ke7/AEqxauMNrj+6igLo7DXG8d5QvUtmdvgoM79aKYPsTh1ALKX9QV+Q1HoTQMY26NO9u+hZo+FW7fHb4Ed8/vY/fQFjdg+z1ldFtqB0C/ZIq3etYex7ZROesSfQan5Ukjj2IIjvX+X1gTVQ3iTJ1J3PX1pUFjdiu0qLpZtlj1cwPWBqR7xQz+t4vSXK81XwoPU/eaE2MTBBABjkQCPeDRle1F9YAZdNgEWB8BToVhLAdjdu9b/Con/MfuNMeB4bZs6Iiqeo1b3nePlSU3arEERnA/wiakt9rL4ESjeq/cRrQA/Mx5Cq+LxyWVzXGCj5nyApIxHaq+wgMqeaLr8STQjFXs5zOxZupLffpQIbcd2xkRaEfpN92w+dLuJ4izHM7knqzfV/pVEED+fvr3vBM8+uk/VQMI8PttefJbEn5RzJPSjC27VhsqsLuImIBEKfrJH8xS/guKNaMoSs7xGvqNjVyxxM3HzLZJuakNbzA+ZgMR8udIA9iwlkB8S3e3j7KToPsjzpfx3EHuGXYnoJ0HoKPpg714BrtkHoWgMAOXhynfrVDE8HAOtm6P1CpB/zMfdQAFNyvC/Sif4sB5Xh6o5+pPtqG5wsAe1c/wDRf7YoAHljUbOYO8URPCY2f4oR9tQXOGR/e2veTp66UAD5FatFErfBrjeyyt+rmP1LWuI4PdTcaciQR9Yj50wBwaNK1L0RfgOJAk2mPpH31WbhV7c22Hrp8iaBEHejy+JrKl/Fd38wfEVlAxPHELnUfCtxxJ/L4VlZVlCN14k/Rfn99b/jN+i/OvKylSCzb8aN+aPialXih5p8zXlZRSCyX8bf9MD31svFf0Pn/pWVlFILNxxUD8k/Gtl4sn5p+Ve1lLhQWeniy9D7/wDeon4lM6/KvKyikFklrHA7tB8gakVs2gHvMfVvWVlDQWeC5lAB0PSpFu+ZryspEmSzOxNZlYbt9VZWUMIrY3nzPwrIPWsrKAfI2k+VRm5y0+FZWUNAjZmHWmTgXDb+QsLzWg0Rl1JHLnoPKsrKixlxuH350x1335v46kXCYobYufVBPzmsrKVhRsyYwbYhD62x91eL+Hf8a1+x/pXtZQBr3nEBzsH3H/Stkx2OB8Vq0R5GP/tWVlAiT8YYvnh1Po4++thi7h9qwBJg+Nfjsf5NZWUAbXseVBJUADXf57UJftZYnUGf1QYrKypJWBTudpcKSZw4J693b+2vaysp0I//2Q==" alt="Taxi Logo" class="rounded-circle border border-warning me-3" alt="NYC Taxi Header Image" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+
+            <div>
+                <h1 style="margin: 0; font-size: 2.5em; font-weight: 700; text-align: left;"> NYC Taxi Usage and Urban Mobility Analytics </h1>
+                <p style="margin: 5px 0 0; font-size: 1.1em; opacity: 0.8; text-align: left;">Principles of Computing - Fall 2025 | Project by Odon Ineza</p>
+            </div>
+            
+        </div>
+    </header>
+
+    <div style="padding: 30px 5%; text-align: center; background-color: #ffffff; border-bottom: 1px solid #ddd;">
+        <h2 style="color: #1f2a37; font-size: 1.8em; margin-top: 0;">Data to Information: The Social Good</h2>
+        <p style="max-width: 800px; margin: 15px auto; line-height: 1.6; color: #555;">This project analyzes NYC Yellow Cab trip data to transform raw transaction records into actionable intelligence for urban planning and public policy. Our goal is to identify and quantify systemic issues related to **traffic congestion, service equity, and the economics of the taxi industry by calculating and visualizing key metrics like Trip Speed (MPH) and Tipping Disparity.</p>
+
+        <div style="margin-top: 20px; font-size: 0.9em; color: #666; padding-top: 10px; border-top: 1px dashed #eee;">
+            <strong style="color: #1f2a37;">Data Source:</strong> NYC Taxi and Limousine Commission (TLC) Trip Record Data (Kaggle/Public Portal)
+            <br>
+            <strong style="color: #1f2a37;">User Profile:</strong> Urban Planners, Traffic Managers, and Public Policy Advocates.
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-around; padding: 20px 5%; background-color: #eef1f4; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <div style="background-color: #ffffff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; flex-grow: 1; margin: 0 10px; min-width: 150px;">
+            <h3 style="margin-top: 0; font-size: 1.0em; color: #1f2a37; font-weight: 600;">Total Trips Analyzed</h3>
+            <p style="margin: 0; font-size: 1.8em; font-weight: bold; color: #ff9900;">~ Million Trips</p>
+        </div>
+        <div style="background-color: #ffffff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; flex-grow: 1; margin: 0 10px; min-width: 150px;">
+            <h3 style="margin-top: 0; font-size: 1.0em; color: #1f2a37; font-weight: 600;">Average Trip Speed</h3>
+            <p style="margin: 0; font-size: 1.8em; font-weight: bold; color: #ff9900;">~ MPH</p>
+        </div>
+        <div style="background-color: #ffffff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; flex-grow: 1; margin: 0 10px; min-width: 150px;">
+            <h3 style="margin-top: 0; font-size: 1.0em; color: #1f2a37; font-weight: 600;">Average Trip Duration</h3>
+            <p style="margin: 0; font-size: 1.8em; font-weight: bold; color: #ff9900;">~ Minutes</p>
+        </div>
+        <div style="background-color: #ffffff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; flex-grow: 1; margin: 0 10px; min-width: 150px;">
+            <h3 style="margin-top: 0; font-size: 1.0em; color: #1f2a37; font-weight: 600;">Peak Demand Hour</h3>
+            <p style="margin: 0; font-size: 1.8em; font-weight: bold; color: #ff9900;">~ PM</p>
+        </div>
+    </div>
+
+    <main class="visualization-grid">
+
+        <section class="viz-card full-width">
+            <h3>V1: Peak Taxi Pickup Hours (Q1) - [Bar Chart]</h3>
+            <div class="viz-content">
+                <div class="plotly-placeholder">
+                 <img src="Viz 1.png" alt="Visualization 1: [Short Description]" style="width: 100%; height: 100%; display: block; margin: 0 auto;">
+                
+                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Evening Peak:</strong> Demand spikes between 6 PM (18:00) and 8 PM (20:00), reflecting the primary outflow of commuters and evening social travelers.</p></li>
+                        <li><p><strong>Low Period:</strong> Demand is lowest between 3 AM and 5 AM, suggesting the best window for road maintenance.</p></li>
+                        <li><p><strong>Asymmetrical Rush:</strong> The evening peak is substantially higher than the morning peak (7 AM - 9 AM).</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="viz-card full-width">
+            <h3>V2: Trip Distance Distribution by Hour (Q2) - [Box Plot]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+                   <img src="Viz 2.png" alt="Visualization 2: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Longer Late-Night Trips:</strong> Median distance is higher between 11 PM and 4 AM, indicating longer-haul needs when other transit is limited.</p></li>
+                        <li><p><strong>Short Mid-Day Trips:</strong> Tighter distribution during business hours (10 AM - 3 PM) confirms localized, intra-Manhattan movement.</p></li>
+                        <li><p><strong>High-Variance Commute:</strong> Evening rush (4 PM - 7 PM) shows a large spread, reflecting a mix of short errands and long commuter trips.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="viz-card full-width">
+            <h3>V3: Taxi Demand by Day of Week (Q3) - [Bar Chart]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 3.png" alt="Visualization 3: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Weekend Peak:</strong> Friday and Saturday are the peak days for taxi demand, driven by social and weekend travel.</p></li>
+                        <li><p><strong>Stable Mid-Week Demand:</strong> Tuesday, Wednesday, and Thursday exhibit very stable, high demand, reflecting core business travel.</p></li>
+                        <li><p><strong>Lowest Activity:</strong> Sunday consistently records the lowest demand, suitable for scheduling major public works projects.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="viz-card full-width">
+            <h3>V4: Tip Amount vs. Total Fare (Q4a) - [Scatter Plot]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 4.png" alt="Visualization 4: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Standardized Tipping:</strong> Strong linear correlation shows most tips fall within the expected 15-20% range.</p></li>
+                        <li><p><strong>High Zero-Tip Frequency:</strong> A large cluster of trips sits directly on the \$0 tip line, likely representing unrecorded cash payments.</p></li>
+                        <li><p><strong>Tip Variance:</strong> As the fare increases, the vertical spread (variance) in tip amount also increases, reflecting discretionary choice on high-cost trips.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="viz-card full-width">
+            <h3>V5: Fare Amount vs. Trip Distance (Q8) - [Scatter Plot]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 5.png" alt="Visualization 5: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Structural Correlation:</strong> Shows a strong linear relationship on a log-log scale, confirming the distance-based fare structure.</p></li>
+                        <li><p><strong>Minimum Fare:</strong> Concentration at the lower end highlights the mandated minimum fare floor.</p></li>
+                        <li><p><strong>Outlier Impact:</strong> Vertical outliers (high fare for short distance) suggest the influence of tolls, airport surcharges, or special rate codes.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="viz-card full-width">
+            <h3>V6: Trip Duration by Traffic Status (Q7) - [Violin Plot]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 6.png" alt="Visualization 6: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Rush Hour Travel Time Penalty:</strong> The median duration is observably higher for Rush Hour, quantifying the time lost due to congestion.</p></li>
+                        <li><p><strong>Unpredictability:</strong> The Rush Hour distribution is wider, meaning trip times are more variable and unpredictable during peak periods.</p></li>
+                        <li><p><strong>Control Justification:</strong> Provides data-driven support for policies like congestion pricing aimed at reducing travel time variance during peak hours.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="viz-card full-width">
+            <h3>V7: Tip Amount vs. Trip Distance (Q4b) - [Density Heatmap]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 7.png" alt="Visualization 7: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Financial Core:</strong> Highest density cluster occurs at short distances (0-3 miles) and moderate tips (\$2-\$4), confirming the industry's backbone.</p></li>
+                        <li><p><strong>High-Value Tips:</strong> Longer trips (beyond 10 miles) show proportionally high tip amounts, despite their infrequency.</p></li>
+                        <li><p><strong>Zero Tip Density:</strong> High concentration near the origin (short distance, \$0 tip) reinforces the frequency of unrecorded/cash tips on short, high-turnover rides.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="viz-card full-width">
+            <h3>V8: Pickup Hotspots (Q5) - [Map Visualization]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 8.png" alt="Visualization 8: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Manhattan Core Monoculture:</strong> Overwhelming majority of pickups concentrated in Midtown and Lower Manhattan, confirming service limitations outside the core.</p></li>
+                        <li><p><strong>Hub Connectors:</strong> Clear hotspots visible around major transit centers (Penn Station, Grand Central), showing taxis as first/last-mile connectors.</p></li>
+                        <li><p><strong>Service Deserts:</strong> Lack of density in outer boroughs highlights a critical mobility equity issue for city planners to address.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="viz-card full-width">
+            <h3>V9: Fare Amount by Traffic Status (Q9) - [ECDF Plot]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 9.png" alt="Visualization 9: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Congestion Cost Penalty:</strong> The Rush Hour ECDF curve is shifted right, proving the median fare is higher during peak traffic for any given percentage of trips.</p></li>
+                        <li><p><strong>Distribution Spread:</strong> A smaller percentage of Rush Hour trips fall into the lower fare brackets, increasing the likelihood of a higher-cost ride.</p></li>
+                        <li><p><strong>Policy Baseline:</strong> Provides a baseline to compare fare changes after implementing policies like congestion pricing to assess the financial impact on riders.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="viz-card full-width">
+            <h3>V10: Trip Speed Distribution (Q10) - [Histogram]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 10.png" alt="Visualization 10: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Congestion Quantified:</strong> The median operational speed is lowest on core weekdays (8-12 MPH), quantifying the travel penalty.</p></li>
+                        <li><p><strong>Weekend Efficiency:</strong> Distribution shifts significantly right on Sat/Sun, showing travelers gain speed when volume is lower.</p></li>
+                        <li><p><strong>Operational Benchmark:</strong> The 8-12 MPH band is the critical congestion zone for future traffic mitigation goal-setting.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="viz-card full-width">
+            <h3>V11: Tip Percentage by Payment Type (Q11) - [Violin Plot]</h3>
+            <div class="viz-content">
+                 <div class="plotly-placeholder">
+<img src="Viz 11.png" alt="Visualization 11: [Short Description]" style="width: 100%; height: auto; display: block; margin: 0 auto;">                </div>
+                </div>
+                <div class="insights-box">
+                    <h4>Insights:</h4>
+                    <ul>
+                        <li><p><strong>Short Trips Favored:</strong> The massive, dense peak at the bottom (5-10 minutes) confirms the taxi system is dominated by high-turnover, short-haul, intra-Manhattan rides.</p></li>
+                        <li><p><strong>Statistically Rare Long Trips:</strong> The rapid narrowing of the 'violin' shape demonstrates that the probability of a trip lasting over 30 minutes drops steeply. This confirms that long-distance (cross-borough/airport) trips are statistically rare outliers in the overall service pattern.</p></li>
+                        <li><p><strong>Median vs. Mean Disparity:</strong> The difference between the average duration (mean) and the typical duration (median) is significant. This shows that a few very long trips (the long tail) drag the average up, while the true, typical trip time remains short (median value).</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Odon Ineza | Principles of Computing Final Project</p>
+        <p>Data Source: NYC TLC Trip Record Data</p>
+    </footer>
+
+</body>
+</html>
