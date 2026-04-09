@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """
 Extract Plotly figure specs from Jupyter notebook display outputs and write
-plot-specs.json for the Vercel static dashboard (dashboard.js).
+plot-specs.json for the static dashboard (one spec per chart, order matches v1…v11).
 
 Usage:
   python3 scripts/export_plot_specs.py
   python3 scripts/export_plot_specs.py --notebook Personal_Project_Code_~_Odon.ipynb --output plot-specs.json
-
-Run this after you re-execute the notebook so the embedded HTML outputs match
-your latest charts, then commit plot-specs.json and push to redeploy Vercel.
 """
 
 from __future__ import annotations
@@ -177,7 +174,7 @@ def main() -> None:
         "--max-charts",
         type=int,
         default=11,
-        help="Maximum number of charts to export (default: 11 for V1–V11)",
+        help="Maximum number of charts to export (default: 11 for v1–v11)",
     )
     args = parser.parse_args()
 

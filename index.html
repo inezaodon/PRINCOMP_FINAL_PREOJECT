@@ -3,39 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NYC Taxi Interactive Dashboard</title>
-  <link rel="stylesheet" href="index.css">
-  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <title>NYC Taxi Analytics — Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
 </head>
-<body>
-  <header class="header">
-    <h1>NYC Taxi Usage and Urban Mobility Analytics</h1>
-    <p>Interactive dashboard deployed on Vercel</p>
-  </header>
 
-  <section class="intro">
-    <h2>Data to Information: The Social Good</h2>
-    <p>
-      This dashboard turns NYC Yellow Cab trip data into interactive visuals for
-      exploring demand, congestion, fares, tipping patterns, and pickup geography.
-      All charts are rendered directly in the browser with Plotly.
-    </p>
+
+<body data-current-file="index.html">
+  <nav class="site-nav">
+    <a class="site-nav__brand" href="index.html">
+      <span class="site-nav__logo" aria-hidden="true">🚕</span>
+      <span>NYC Taxi Analytics</span>
+    </a>
+    <div class="site-nav__controls">
+      <label for="viz-jump">Go to</label>
+      <select id="viz-jump" aria-label="Jump to visualization"></select>
+    </div>
+  </nav>
+
+  <section class="home-hero" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80');">
+    <div class="home-hero__inner">
+      <h1>Urban mobility, visualized</h1>
+      <p>Eleven interactive chapters on yellow cab demand, fairness, congestion, and geography — each with its own cinematic hero and live Plotly chart.</p>
+    </div>
   </section>
-
-  <section class="toolbar">
-    <label for="chart-filter">Chart:</label>
-    <select id="chart-filter">
-      <option value="all">All charts</option>
-    </select>
+  <section class="home-intro">
+    <h2>Choose a story</h2>
+    <p>Open any card below or use the navigation dropdown on every page to jump between visualizations. Charts load from <code>plot-specs.json</code> (regenerate after notebook runs with <code>python3 scripts/export_plot_specs.py</code>).</p>
   </section>
-
-  <main id="dashboard-grid" class="visualization-grid"></main>
-
-  <footer class="footer">
-    <p>&copy; 2026 Odon Ineza</p>
-    <p>Data Source: NYC TLC Trip Record Data</p>
+  <div class="gallery">
+    
+    <a class="viz-card-link" href="v1.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 1</div>
+        <h3>Peak pickup hours</h3>
+        <p>When does the city call for cabs? Hourly pulse of pickups across NYC.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v2.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 2</div>
+        <h3>Trip distance by hour</h3>
+        <p>How trip length shifts from rush hour to late night — box-plot story of the clock.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v3.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 3</div>
+        <h3>Demand by weekday</h3>
+        <p>Which days drive the most rides — workweek vs weekend energy.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v4.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 4</div>
+        <h3>Tips vs total fare</h3>
+        <p>Scatter of gratitude — how tips scale with the meter.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v5.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 5</div>
+        <h3>Fare vs trip distance</h3>
+        <p>Distance and dollars on log scale — the shape of pricing.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v6.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 6</div>
+        <h3>Duration vs traffic</h3>
+        <p>Rush hour vs off-peak — how long trips really take.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v7.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 7</div>
+        <h3>Tips vs distance density</h3>
+        <p>Where tips and miles stack up — 2D density of short hops and big fares.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v8.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 8</div>
+        <h3>Pickup hotspots</h3>
+        <p>Spatial story — Manhattan glow and borough shadows.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v9.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 9</div>
+        <h3>Fare vs traffic status</h3>
+        <p>ECDF lens on rush vs crawl — who pays more at the margin.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v10.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 10</div>
+        <h3>Fleet speed by day</h3>
+        <p>Histogram of MPH — congestion measured as motion.</p>
+      </div>
+    </a>
+    <a class="viz-card-link" href="v11.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 11</div>
+        <h3>Tips by payment type</h3>
+        <p>How tipping behavior shifts when the trip is settled different ways.</p>
+      </div>
+    </a>
+  </div>
+  <footer class="site-footer">
+    <p>NYC TLC-inspired student project · Images via Unsplash</p>
   </footer>
 
-  <script src="dashboard.js"></script>
+  <script>
+    window.VIZ_PAGE_LABELS = ["Peak pickup hours", "Trip distance by hour", "Demand by weekday", "Tips vs total fare", "Fare vs trip distance", "Duration vs traffic", "Tips vs distance density", "Pickup hotspots", "Fare vs traffic status", "Fleet speed by day", "Tips by payment type"];
+  </script>
+  <script src="js/site.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      Site.populateVizDropdown(
+        document.getElementById("viz-jump"),
+        document.body.getAttribute("data-current-file") || "index.html"
+      );
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V6: Duration vs traffic | NYC Taxi Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+
+
+<body data-current-file="v6.html">
+  <nav class="site-nav">
+    <a class="site-nav__brand" href="index.html">
+      <span class="site-nav__logo" aria-hidden="true">🚕</span>
+      <span>NYC Taxi Analytics</span>
+    </a>
+    <div class="site-nav__controls">
+      <label for="viz-jump">Go to</label>
+      <select id="viz-jump" aria-label="Jump to visualization"></select>
+    </div>
+  </nav>
+
+  <section class="viz-hero" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2000&q=80');">
+    <div class="viz-hero__inner">
+      <div class="viz-hero__kicker">Congestion</div>
+      <h1>V6: Duration vs traffic</h1>
+      <p>Rush hour vs off-peak — how long trips really take.</p>
+    </div>
+  </section>
+  <main class="viz-main">
+    <div class="viz-panel">
+      <h2>Interactive chart</h2>
+      <p class="viz-caption">Pan, zoom, and hover — powered by Plotly in your browser.</p>
+      <div id="plot-main" class="plot-container"></div>
+    </div>
+    <div class="viz-prev-next">
+      <a href="v5.html">← V5</a>
+      <a href="v7.html">V7 →</a>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p><a href="index.html">Back to gallery</a> · NYC TLC-inspired project</p>
+  </footer>
+
+  <script>
+    window.VIZ_PAGE_LABELS = ["Peak pickup hours", "Trip distance by hour", "Demand by weekday", "Tips vs total fare", "Fare vs trip distance", "Duration vs traffic", "Tips vs distance density", "Pickup hotspots", "Fare vs traffic status", "Fleet speed by day", "Tips by payment type"];
+  </script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+  <script src="js/site.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      Site.populateVizDropdown(
+        document.getElementById("viz-jump"),
+        document.body.getAttribute("data-current-file") || "index.html"
+      );
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      Site.renderVizChart("plot-main", 6);
+    });
+  </script>
+</body>
+</html>
