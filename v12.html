@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V3: Demand by weekday | NYC Taxi Analytics</title>
+  <title>V12: Passengers per trip | NYC Taxi Analytics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 </head>
 
 
-<body data-current-file="v3.html">
+<body data-current-file="v12.html">
   <nav class="site-nav">
     <a class="site-nav__brand" href="index.html">
       <span class="site-nav__logo" aria-hidden="true">🚕</span>
@@ -23,11 +23,11 @@
     </div>
   </nav>
 
-  <section class="viz-hero" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=80');">
+  <section class="viz-hero" style="background-image: url('https://images.unsplash.com/photo-1571985342229-527a24e558f4?auto=format&fit=crop&w=2000&q=80');">
     <div class="viz-hero__inner">
-      <div class="viz-hero__kicker">Weekly pulse</div>
-      <h1>V3: Demand by weekday</h1>
-      <p>Calendar structure (workweek vs weekend) affects transit complementary services and driver income stability. Aggregating pickups by weekday tests whether demand has a repeatable weekly signature—significant for scheduling and policy baselines, independent of which day is busiest.</p>
+      <div class="viz-hero__kicker">Fleet utilization</div>
+      <h1>V12: Passengers per trip</h1>
+      <p>Reported passenger counts encode whether rides are overwhelmingly single-occupancy or occasionally shared—information relevant to capacity planning, emissions per rider, and how TLC records differ from curb reality. Histogramming the field tests the shape of that distribution without stating the modal group here.</p>
     </div>
   </section>
   <main class="viz-main">
@@ -37,8 +37,8 @@
       <div id="plot-main" class="plot-container"></div>
     </div>
     <div class="viz-prev-next">
-      <a href="v2.html">← V2</a>
-      <a href="v4.html">V4 →</a>
+      <a href="v11.html">← V11</a>
+      <span></span>
     </div>
   </main>
   <footer class="site-footer">
@@ -61,7 +61,7 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      Site.renderVizChart("plot-main", 3);
+      Site.renderVizChart("plot-main", 12);
     });
   </script>
 </body>

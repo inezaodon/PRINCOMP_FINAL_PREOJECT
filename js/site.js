@@ -2,7 +2,7 @@
  * Shared site logic: load plot-specs.json, Plotly layout cleanup, nav dropdown.
  */
 
-const VIZ_COUNT = 11;
+const VIZ_COUNT = 12;
 
 async function loadSpecs() {
   const response = await fetch("plot-specs.json", { cache: "no-store" });

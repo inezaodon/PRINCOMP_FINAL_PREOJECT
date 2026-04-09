@@ -173,8 +173,8 @@ def main() -> None:
     parser.add_argument(
         "--max-charts",
         type=int,
-        default=11,
-        help="Maximum number of charts to export (default: 11 for v1–v11)",
+        default=12,
+        help="Maximum number of charts to export (default: 12 for v1–v12)",
     )
     args = parser.parse_args()
 

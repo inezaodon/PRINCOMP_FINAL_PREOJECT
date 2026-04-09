@@ -26,7 +26,7 @@
   <section class="home-hero" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80');">
     <div class="home-hero__inner">
       <h1>Urban mobility, visualized</h1>
-      <p>Eleven analytical lenses on NYC for-hire trip data—each with its own page, hero art, and interactive chart. Below, learn why the work matters and what each visualization is designed to explore (without spoiling what the figures show).</p>
+      <p>Twelve analytical lenses on NYC for-hire trip data—each with its own page, hero art, and interactive chart. Below, learn why the work matters and what each visualization is designed to explore (without spoiling what the figures show).</p>
     </div>
   </section>
 
@@ -35,7 +35,7 @@
       <h2>Why this project matters</h2>
       <p>For-hire vehicle trip records are more than receipts: they are a sensor on how a city moves, who it serves well, and where friction shows up as lost time, uneven access, or opaque earnings. This project treats TLC-style yellow cab data as a public-interest dataset—connecting raw trips to questions urban planners, operators, and policymakers routinely ask about peaks, equity, and cost.</p>
       <p>The significance is methodological as well as civic. By grounding each view in an explicit analytical question—temporal demand, distance and fare structure, tipping and payment behavior, congestion proxies, and geography—you can separate what you measure from what you find. The interactive charts let readers explore outcomes themselves; the narrative here stays focused on intent, stakes, and why each lens matters.</p>
-      <p>Together, the visualizations form a structured tour of urban mobility analytics: from rhythm-of-the-day problems to fairness and efficiency implications, without front-loading conclusions. Use the gallery to choose a question; use the chart on each page to see how the data answers it.</p>
+      <p>Together, twelve complementary visualizations form a structured tour of urban mobility analytics: from rhythm-of-the-day problems to fairness and efficiency implications, without front-loading conclusions. Use the gallery to choose a question; use the chart on each page to see how the data answers it.</p>
     </div>
   </section>
   <section class="home-intro">
@@ -132,13 +132,21 @@
         <p class="viz-card-analysis">Payment channel may correlate with how tips are suggested, recorded, or rounded. Comparing tip behavior across payment types helps separate cultural norms from data artifacts—significant for fairness and regulation—without asserting which mode yields higher tips on this page.</p>
       </div>
     </a>
+    <a class="viz-card-link" href="v12.html">
+      <div class="viz-card-link__img" style="background-image: url('https://images.unsplash.com/photo-1571985342229-527a24e558f4?auto=format&fit=crop&w=2000&q=80');" role="img" aria-label=""></div>
+      <div class="viz-card-link__body">
+        <div class="viz-card-link__tag">Visualization 12</div>
+        <h3>Passengers per trip</h3>
+        <p class="viz-card-analysis">Reported passenger counts encode whether rides are overwhelmingly single-occupancy or occasionally shared—information relevant to capacity planning, emissions per rider, and how TLC records differ from curb reality. Histogramming the field tests the shape of that distribution without stating the modal group here.</p>
+      </div>
+    </a>
   </div>
   <footer class="site-footer">
     <p>NYC TLC-inspired student project · Images via Unsplash</p>
   </footer>
 
   <script>
-    window.VIZ_PAGE_LABELS = ["Peak pickup hours", "Trip distance by hour", "Demand by weekday", "Tips vs total fare", "Fare vs trip distance", "Duration vs traffic", "Tips vs distance density", "Pickup hotspots", "Fare vs traffic status", "Fleet speed by day", "Tips by payment type"];
+    window.VIZ_PAGE_LABELS = ["Peak pickup hours", "Trip distance by hour", "Demand by weekday", "Tips vs total fare", "Fare vs trip distance", "Duration vs traffic", "Tips vs distance density", "Pickup hotspots", "Fare vs traffic status", "Fleet speed by day", "Tips by payment type", "Passengers per trip"];
   </script>
   <script src="js/site.js"></script>
   <script>

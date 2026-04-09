@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate index.html and v1.html … v11.html from a single theme list.
+Generate index.html and v1.html … v12.html from a single theme list.
 Run from repo root:  python3 scripts/generate_viz_pages.py
 """
 
@@ -12,7 +12,7 @@ from pathlib import Path
 PROJECT_SIGNIFICANCE_PARAGRAPHS = [
     "For-hire vehicle trip records are more than receipts: they are a sensor on how a city moves, who it serves well, and where friction shows up as lost time, uneven access, or opaque earnings. This project treats TLC-style yellow cab data as a public-interest dataset—connecting raw trips to questions urban planners, operators, and policymakers routinely ask about peaks, equity, and cost.",
     "The significance is methodological as well as civic. By grounding each view in an explicit analytical question—temporal demand, distance and fare structure, tipping and payment behavior, congestion proxies, and geography—you can separate what you measure from what you find. The interactive charts let readers explore outcomes themselves; the narrative here stays focused on intent, stakes, and why each lens matters.",
-    "Together, the visualizations form a structured tour of urban mobility analytics: from rhythm-of-the-day problems to fairness and efficiency implications, without front-loading conclusions. Use the gallery to choose a question; use the chart on each page to see how the data answers it.",
+    "Together, twelve complementary visualizations form a structured tour of urban mobility analytics: from rhythm-of-the-day problems to fairness and efficiency implications, without front-loading conclusions. Use the gallery to choose a question; use the chart on each page to see how the data answers it.",
 ]
 
 
@@ -105,6 +105,13 @@ VIZ = [
         "kicker": "Cash vs card",
         "analysis": "Payment channel may correlate with how tips are suggested, recorded, or rounded. Comparing tip behavior across payment types helps separate cultural norms from data artifacts—significant for fairness and regulation—without asserting which mode yields higher tips on this page.",
         "hero": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80",
+    },
+    {
+        "n": 12,
+        "label": "Passengers per trip",
+        "kicker": "Fleet utilization",
+        "analysis": "Reported passenger counts encode whether rides are overwhelmingly single-occupancy or occasionally shared—information relevant to capacity planning, emissions per rider, and how TLC records differ from curb reality. Histogramming the field tests the shape of that distribution without stating the modal group here.",
+        "hero": "https://images.unsplash.com/photo-1571985342229-527a24e558f4?auto=format&fit=crop&w=2000&q=80",
     },
 ]
 
@@ -206,7 +213,7 @@ def write_index(root: Path) -> None:
   <section class="home-hero" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80');">
     <div class="home-hero__inner">
       <h1>Urban mobility, visualized</h1>
-      <p>Eleven analytical lenses on NYC for-hire trip data—each with its own page, hero art, and interactive chart. Below, learn why the work matters and what each visualization is designed to explore (without spoiling what the figures show).</p>
+      <p>Twelve analytical lenses on NYC for-hire trip data—each with its own page, hero art, and interactive chart. Below, learn why the work matters and what each visualization is designed to explore (without spoiling what the figures show).</p>
     </div>
   </section>
 {significance_section_html()}
