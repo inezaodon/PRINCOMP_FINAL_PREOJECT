@@ -26,12 +26,21 @@
   <section class="home-hero" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80');">
     <div class="home-hero__inner">
       <h1>Urban mobility, visualized</h1>
-      <p>Eleven interactive chapters on yellow cab demand, fairness, congestion, and geography — each with its own cinematic hero and live Plotly chart.</p>
+      <p>Eleven analytical lenses on NYC for-hire trip data—each with its own page, hero art, and interactive chart. Below, learn why the work matters and what each visualization is designed to explore (without spoiling what the figures show).</p>
+    </div>
+  </section>
+
+  <section class="home-significance">
+    <div class="home-significance__inner">
+      <h2>Why this project matters</h2>
+      <p>For-hire vehicle trip records are more than receipts: they are a sensor on how a city moves, who it serves well, and where friction shows up as lost time, uneven access, or opaque earnings. This project treats TLC-style yellow cab data as a public-interest dataset—connecting raw trips to questions urban planners, operators, and policymakers routinely ask about peaks, equity, and cost.</p>
+      <p>The significance is methodological as well as civic. By grounding each view in an explicit analytical question—temporal demand, distance and fare structure, tipping and payment behavior, congestion proxies, and geography—you can separate what you measure from what you find. The interactive charts let readers explore outcomes themselves; the narrative here stays focused on intent, stakes, and why each lens matters.</p>
+      <p>Together, the visualizations form a structured tour of urban mobility analytics: from rhythm-of-the-day problems to fairness and efficiency implications, without front-loading conclusions. Use the gallery to choose a question; use the chart on each page to see how the data answers it.</p>
     </div>
   </section>
   <section class="home-intro">
-    <h2>Choose a story</h2>
-    <p>Open any card below or use the navigation dropdown on every page to jump between visualizations. Charts load from <code>plot-specs.json</code> (regenerate after notebook runs with <code>python3 scripts/export_plot_specs.py</code>).</p>
+    <h2>Explore the gallery</h2>
+    <p>Each card states the <strong>analytical purpose</strong> of that view—questions, methods, and real-world stakes—not the empirical outcome (that is for the chart). Open a page from the grid or use the <strong>Go to</strong> menu. Charts are loaded from <code>plot-specs.json</code>; after re-running your notebook, refresh specs with <code>python3 scripts/export_plot_specs.py</code>.</p>
   </section>
   <div class="gallery">
     
@@ -40,7 +49,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 1</div>
         <h3>Peak pickup hours</h3>
-        <p>When does the city call for cabs? Hourly pulse of pickups across NYC.</p>
+        <p class="viz-card-analysis">Hourly demand shapes staffing, congestion policy, and expectations for when the street network is most stressed. This view uses pickup timestamps to ask how intensity varies across the clock—letting the data reveal peaks and troughs rather than naming them here.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v2.html">
@@ -48,7 +57,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 2</div>
         <h3>Trip distance by hour</h3>
-        <p>How trip length shifts from rush hour to late night — box-plot story of the clock.</p>
+        <p class="viz-card-analysis">Trip length is not constant over the day; commuters, nightlife, and airport patterns can all change the distribution of miles. Box plots by hour summarize median, spread, and outliers so you can compare shapes of distance at different times—without stating which hour wins.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v3.html">
@@ -56,7 +65,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 3</div>
         <h3>Demand by weekday</h3>
-        <p>Which days drive the most rides — workweek vs weekend energy.</p>
+        <p class="viz-card-analysis">Calendar structure (workweek vs weekend) affects transit complementary services and driver income stability. Aggregating pickups by weekday tests whether demand has a repeatable weekly signature—significant for scheduling and policy baselines, independent of which day is busiest.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v4.html">
@@ -64,7 +73,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 4</div>
         <h3>Tips vs total fare</h3>
-        <p>Scatter of gratitude — how tips scale with the meter.</p>
+        <p class="viz-card-analysis">Tips sit at the intersection of social norms, service quality perception, and how payments are recorded. A fare–tip scatter invites questions about proportionality, clustering at certain fare bands, and zeros that may reflect cash tips not logged—analytically important for driver livelihood discussions.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v5.html">
@@ -72,7 +81,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 5</div>
         <h3>Fare vs trip distance</h3>
-        <p>Distance and dollars on log scale — the shape of pricing.</p>
+        <p class="viz-card-analysis">Metered fares should relate to distance in a principled way; surcharges, minimums, and long-haul behavior show up in log–log space. This plot examines the structural relationship between miles and dollars so readers can judge linearity, floors, and anomalies for themselves.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v6.html">
@@ -80,7 +89,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 6</div>
         <h3>Duration vs traffic</h3>
-        <p>Rush hour vs off-peak — how long trips really take.</p>
+        <p class="viz-card-analysis">Trip duration is a direct congestion signal once distance is held in mind. Labeling trips by a simple rush vs off-peak scheme (from pickup time) asks whether time-in-traffic distributions widen or shift—a policy-relevant comparison we do not pre-empt with numeric conclusions.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v7.html">
@@ -88,7 +97,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 7</div>
         <h3>Tips vs distance density</h3>
-        <p>Where tips and miles stack up — 2D density of short hops and big fares.</p>
+        <p class="viz-card-analysis">Two-dimensional density links how far people travel with how much they tip, surfacing where probability mass lives in the fare ecosystem. It is useful for discussing short-hop dominance versus long-run tails without spelling out where the brightest cells fall.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v8.html">
@@ -96,7 +105,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 8</div>
         <h3>Pickup hotspots</h3>
-        <p>Spatial story — Manhattan glow and borough shadows.</p>
+        <p class="viz-card-analysis">Geography tests whether opportunity concentrates in a core or spreads across neighborhoods—central to service equity and infrastructure investment. Mapping pickups encodes spatial demand without narrating which blocks lead the distribution; interpretation stays with the reader.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v9.html">
@@ -104,7 +113,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 9</div>
         <h3>Fare vs traffic status</h3>
-        <p>ECDF lens on rush vs crawl — who pays more at the margin.</p>
+        <p class="viz-card-analysis">Empirical CDFs compare entire fare distributions under different traffic regimes, not just averages. That supports questions about whether congestion periods shift the whole payment experience (tails included)—a richer policy lens than a single summary statistic.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v10.html">
@@ -112,7 +121,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 10</div>
         <h3>Fleet speed by day</h3>
-        <p>Histogram of MPH — congestion measured as motion.</p>
+        <p class="viz-card-analysis">Implied speed from distance and duration operationalizes how fluidly traffic is moving when taxis are working. Histograms by weekday ask whether the speed profile is stable or shifts with weekly rhythms—relevant to congestion narratives without naming which day is slowest here.</p>
       </div>
     </a>
     <a class="viz-card-link" href="v11.html">
@@ -120,7 +129,7 @@
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization 11</div>
         <h3>Tips by payment type</h3>
-        <p>How tipping behavior shifts when the trip is settled different ways.</p>
+        <p class="viz-card-analysis">Payment channel may correlate with how tips are suggested, recorded, or rounded. Comparing tip behavior across payment types helps separate cultural norms from data artifacts—significant for fairness and regulation—without asserting which mode yields higher tips on this page.</p>
       </div>
     </a>
   </div>

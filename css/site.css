@@ -158,10 +158,40 @@ a:hover {
   max-width: 560px;
 }
 
+.home-significance {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 40px clamp(20px, 5vw, 52px) 36px;
+}
+
+.home-significance__inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.home-significance h2 {
+  margin: 0 0 16px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.home-significance p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.home-significance p:last-child {
+  margin-bottom: 0;
+}
+
 .home-intro {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px clamp(20px, 5vw, 48px) 8px;
+  padding: 32px clamp(20px, 5vw, 48px) 8px;
 }
 
 .home-intro h2 {
@@ -232,6 +262,13 @@ a:hover {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.45;
+}
+
+.viz-card-link .viz-card-analysis {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #475569;
 }
 
 .site-footer {

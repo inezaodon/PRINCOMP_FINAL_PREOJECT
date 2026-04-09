@@ -8,83 +8,102 @@ from __future__ import annotations
 
 from pathlib import Path
 
-# Short labels for nav + cards (match your analysis storyline)
+# Main page only — why the portfolio exists (no chart spoilers).
+PROJECT_SIGNIFICANCE_PARAGRAPHS = [
+    "For-hire vehicle trip records are more than receipts: they are a sensor on how a city moves, who it serves well, and where friction shows up as lost time, uneven access, or opaque earnings. This project treats TLC-style yellow cab data as a public-interest dataset—connecting raw trips to questions urban planners, operators, and policymakers routinely ask about peaks, equity, and cost.",
+    "The significance is methodological as well as civic. By grounding each view in an explicit analytical question—temporal demand, distance and fare structure, tipping and payment behavior, congestion proxies, and geography—you can separate what you measure from what you find. The interactive charts let readers explore outcomes themselves; the narrative here stays focused on intent, stakes, and why each lens matters.",
+    "Together, the visualizations form a structured tour of urban mobility analytics: from rhythm-of-the-day problems to fairness and efficiency implications, without front-loading conclusions. Use the gallery to choose a question; use the chart on each page to see how the data answers it.",
+]
+
+
+def significance_section_html() -> str:
+    paras = "\n".join(f"      <p>{p}</p>" for p in PROJECT_SIGNIFICANCE_PARAGRAPHS)
+    return f"""
+  <section class="home-significance">
+    <div class="home-significance__inner">
+      <h2>Why this project matters</h2>
+{paras}
+    </div>
+  </section>"""
+
+
+# Nav labels + gallery/detail copy: "analysis" frames the question and stakes only (no results).
 VIZ = [
     {
         "n": 1,
         "label": "Peak pickup hours",
         "kicker": "Demand rhythm",
-        "blurb": "When does the city call for cabs? Hourly pulse of pickups across NYC.",
+        "analysis": "Hourly demand shapes staffing, congestion policy, and expectations for when the street network is most stressed. This view uses pickup timestamps to ask how intensity varies across the clock—letting the data reveal peaks and troughs rather than naming them here.",
         "hero": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 2,
         "label": "Trip distance by hour",
         "kicker": "Distance patterns",
-        "blurb": "How trip length shifts from rush hour to late night — box-plot story of the clock.",
+        "analysis": "Trip length is not constant over the day; commuters, nightlife, and airport patterns can all change the distribution of miles. Box plots by hour summarize median, spread, and outliers so you can compare shapes of distance at different times—without stating which hour wins.",
         "hero": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 3,
         "label": "Demand by weekday",
         "kicker": "Weekly pulse",
-        "blurb": "Which days drive the most rides — workweek vs weekend energy.",
+        "analysis": "Calendar structure (workweek vs weekend) affects transit complementary services and driver income stability. Aggregating pickups by weekday tests whether demand has a repeatable weekly signature—significant for scheduling and policy baselines, independent of which day is busiest.",
         "hero": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 4,
         "label": "Tips vs total fare",
         "kicker": "Rider generosity",
-        "blurb": "Scatter of gratitude — how tips scale with the meter.",
+        "analysis": "Tips sit at the intersection of social norms, service quality perception, and how payments are recorded. A fare–tip scatter invites questions about proportionality, clustering at certain fare bands, and zeros that may reflect cash tips not logged—analytically important for driver livelihood discussions.",
         "hero": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 5,
         "label": "Fare vs trip distance",
         "kicker": "Fare structure",
-        "blurb": "Distance and dollars on log scale — the shape of pricing.",
+        "analysis": "Metered fares should relate to distance in a principled way; surcharges, minimums, and long-haul behavior show up in log–log space. This plot examines the structural relationship between miles and dollars so readers can judge linearity, floors, and anomalies for themselves.",
         "hero": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 6,
         "label": "Duration vs traffic",
         "kicker": "Congestion",
-        "blurb": "Rush hour vs off-peak — how long trips really take.",
+        "analysis": "Trip duration is a direct congestion signal once distance is held in mind. Labeling trips by a simple rush vs off-peak scheme (from pickup time) asks whether time-in-traffic distributions widen or shift—a policy-relevant comparison we do not pre-empt with numeric conclusions.",
         "hero": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 7,
         "label": "Tips vs distance density",
         "kicker": "Heat of the grid",
-        "blurb": "Where tips and miles stack up — 2D density of short hops and big fares.",
+        "analysis": "Two-dimensional density links how far people travel with how much they tip, surfacing where probability mass lives in the fare ecosystem. It is useful for discussing short-hop dominance versus long-run tails without spelling out where the brightest cells fall.",
         "hero": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 8,
         "label": "Pickup hotspots",
         "kicker": "On the map",
-        "blurb": "Spatial story — Manhattan glow and borough shadows.",
+        "analysis": "Geography tests whether opportunity concentrates in a core or spreads across neighborhoods—central to service equity and infrastructure investment. Mapping pickups encodes spatial demand without narrating which blocks lead the distribution; interpretation stays with the reader.",
         "hero": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 9,
         "label": "Fare vs traffic status",
         "kicker": "Peak pricing",
-        "blurb": "ECDF lens on rush vs crawl — who pays more at the margin.",
+        "analysis": "Empirical CDFs compare entire fare distributions under different traffic regimes, not just averages. That supports questions about whether congestion periods shift the whole payment experience (tails included)—a richer policy lens than a single summary statistic.",
         "hero": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 10,
         "label": "Fleet speed by day",
         "kicker": "Throughput",
-        "blurb": "Histogram of MPH — congestion measured as motion.",
+        "analysis": "Implied speed from distance and duration operationalizes how fluidly traffic is moving when taxis are working. Histograms by weekday ask whether the speed profile is stable or shifts with weekly rhythms—relevant to congestion narratives without naming which day is slowest here.",
         "hero": "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=2000&q=80",
     },
     {
         "n": 11,
         "label": "Tips by payment type",
         "kicker": "Cash vs card",
-        "blurb": "How tipping behavior shifts when the trip is settled different ways.",
+        "analysis": "Payment channel may correlate with how tips are suggested, recorded, or rounded. Comparing tip behavior across payment types helps separate cultural norms from data artifacts—significant for fairness and regulation—without asserting which mode yields higher tips on this page.",
         "hero": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80",
     },
 ]
@@ -176,7 +195,7 @@ def write_index(root: Path) -> None:
       <div class="viz-card-link__body">
         <div class="viz-card-link__tag">Visualization {v['n']}</div>
         <h3>{v['label']}</h3>
-        <p>{v['blurb']}</p>
+        <p class="viz-card-analysis">{v['analysis']}</p>
       </div>
     </a>"""
         )
@@ -187,12 +206,13 @@ def write_index(root: Path) -> None:
   <section class="home-hero" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=80');">
     <div class="home-hero__inner">
       <h1>Urban mobility, visualized</h1>
-      <p>Eleven interactive chapters on yellow cab demand, fairness, congestion, and geography — each with its own cinematic hero and live Plotly chart.</p>
+      <p>Eleven analytical lenses on NYC for-hire trip data—each with its own page, hero art, and interactive chart. Below, learn why the work matters and what each visualization is designed to explore (without spoiling what the figures show).</p>
     </div>
   </section>
+{significance_section_html()}
   <section class="home-intro">
-    <h2>Choose a story</h2>
-    <p>Open any card below or use the navigation dropdown on every page to jump between visualizations. Charts load from <code>plot-specs.json</code> (regenerate after notebook runs with <code>python3 scripts/export_plot_specs.py</code>).</p>
+    <h2>Explore the gallery</h2>
+    <p>Each card states the <strong>analytical purpose</strong> of that view—questions, methods, and real-world stakes—not the empirical outcome (that is for the chart). Open a page from the grid or use the <strong>Go to</strong> menu. Charts are loaded from <code>plot-specs.json</code>; after re-running your notebook, refresh specs with <code>python3 scripts/export_plot_specs.py</code>.</p>
   </section>
   <div class="gallery">
     {"".join(cards)}
@@ -219,7 +239,7 @@ def write_viz_page(root: Path, v: dict, prev_n: int | None, next_n: int | None) 
     <div class="viz-hero__inner">
       <div class="viz-hero__kicker">{v['kicker']}</div>
       <h1>V{n}: {v['label']}</h1>
-      <p>{v['blurb']}</p>
+      <p>{v['analysis']}</p>
     </div>
   </section>
   <main class="viz-main">
