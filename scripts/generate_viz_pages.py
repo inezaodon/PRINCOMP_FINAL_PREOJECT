@@ -111,7 +111,7 @@ VIZ = [
         "label": "Passengers per trip",
         "kicker": "Fleet utilization",
         "analysis": "Reported passenger counts encode whether rides are overwhelmingly single-occupancy or occasionally shared—information relevant to capacity planning, emissions per rider, and how TLC records differ from curb reality. Histogramming the field tests the shape of that distribution without stating the modal group here.",
-        "hero": "https://images.unsplash.com/photo-1571985342229-527a24e558f4?auto=format&fit=crop&w=2000&q=80",
+        "hero": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=80",
     },
 ]
 
